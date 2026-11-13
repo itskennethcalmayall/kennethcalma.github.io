@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Adder</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      width: 250px;
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3>Addition Form</h3>
+    
+    <!-- textField1 = txtFirst -->
+    <input type="number" id="txtFirst" placeholder="First Number">
+    
+    <!-- textField2 = txtSecond -->
+    <input type="number" id="txtSecond" placeholder="Second Number">
+    
+    <!-- textField3 = txtResults -->
+    <input type="number" id="txtResults" placeholder="Result" readonly>
+    
+    <!-- button1 = btnCompute -->
+    <button id="btnCompute">Compute</button>
+    
+    <!-- button2 = btnReset -->
+    <button id="btnReset">Reset</button>
+  </div>
+
+  <script>
+    
+    const txtFirst = document.getElementById("txtFirst");
+    const txtSecond = document.getElementById("txtSecond");
+    const txtResults = document.getElementById("txtResults");
+    const btnCompute = document.getElementById("btnCompute");
+    const btnReset = document.getElementById("btnReset");
+
+    function getSum(){
+     
+      const fNum = parseInt(txtFirst.value, 10) || 0;
+      const sNum = parseInt(txtSecond.value, 10) || 0;
+      
+     
+      const result = fNum + sNum;
+      
+      
+      txtResults.value = result;
+      alert("here is your answer ^w^");
+    }
+
+    function resetForm(){
+      txtFirst.value = "";
+      txtSecond.value = "";
+      txtResults.value = "";
+    }
+
+    
+    btnCompute.addEventListener('click', getSum);
+    btnReset.addEventListener('click', resetForm);
+  </script>
+
+</body>
+</html>
