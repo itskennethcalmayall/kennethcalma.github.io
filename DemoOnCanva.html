@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
 
+    <style>
+        #myDrawing{
+            border:solid 1px green;
+        }
+
+        body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-items: center; /* Centers on both X and Y axes */
+    </style>
+
+</head>
+<body>
+    <canvas height ="500" width="1000" id="myDrawing">
+
+    </canvas>
+
+
+    <script>
+        const canvas = document.getElementById("myDrawing");
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(100, 50); // Move the pen to (30, 50)
+        ctx.lineTo(100, 200); // Draw a line to (150, 100)
+        ctx.lineTo(400, 200);
+        ctx.lineTo(400, 50);
+        ctx.lineTo(100, 50);//x y,
+
+        ctx.fillStyle = '#Ff4400'; 
+        ctx.fill(); 
+
+        ctx.strokeStyle = '#D32F2F'; // Sets line color to Red
+        ctx.lineWidth = 3;
+        ctx.stroke(); // Render the path
+
+        ctx.beginPath();
+        ctx.moveTo(600, 50); // Move the pen to (30, 50)
+        ctx.lineTo(500, 200);
+        ctx.lineTo(700, 200);
+        ctx.lineTo(600, 50);
+        
+
+        ctx.fillStyle = '#Ff4400'; 
+        ctx.fill(); 
+
+        ctx.strokeStyle = '#D32F2F'; // Sets line color to Red
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(650, 200); // Move the pen to (30, 50)
+        ctx.lineTo(650, 300); 
+        ctx.lineTo(550, 300); 
+        ctx.lineTo(550, 200); 
+
+
+        ctx.fillStyle = '#ff6767'; 
+        ctx.fill(); 
+
+
+
+
+        ctx.stroke(); // Render the path
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#D32F2F'; // Sets line color to Red
+
+
+
+
+
+    </script>
+</body>
+</html>
